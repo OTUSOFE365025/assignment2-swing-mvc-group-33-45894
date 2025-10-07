@@ -3,10 +3,17 @@ import java.awt.BorderLayout;
 import javax.swing.*;
 import java.util.List;
 
+// Display:
+// Shows a scrollable list of all scanned items with their prices.
+// Displays the running subtotal at the bottom.
+
+
 public class View {
 	// View uses Swing framework to display UI to user
 	 private JFrame frame;
+	 //running subtotal
 	 private JLabel subtotalLabel;
+	 //scrollable list
 	 private JTextArea itemList;
 
 	 
@@ -49,7 +56,8 @@ public class View {
 	 public void setFrame(JFrame frame) {
 	  this.frame = frame;
 	 }
-	 
+
+	 //update the scrollable list and the running subtotal
 	 public void update(List<String> items, double subtotal){
 		 itemList.setText("");
 		 for (String i:items){

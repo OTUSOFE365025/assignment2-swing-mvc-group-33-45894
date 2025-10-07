@@ -36,10 +36,9 @@ public class Scanner {
 		// Add UI element to frame
 		scannerPanel.add(scanButton);
 		frame.getContentPane().add(scannerPanel);
-
-		scanButton.addActionListener(e -> generateUPC());
 	}
 
+	//randomly generate UPC from products.txt
 	private int generateUPC() {
 		int upc=0;
 		Random rand = new Random();
@@ -51,7 +50,7 @@ public class Scanner {
 			}
 			if (!lines.isEmpty()){
 				String line = lines.get(rand.nextInt(lines.size()));
-				String[] parts = line.split("\\s+");
+				String[] parts = line.split(" ");
 				upc=Integer.parseInt(parts[0]);
 				System.out.println("Scanned UPC: "+upc);
 			}
@@ -63,10 +62,12 @@ public class Scanner {
 		return upc;
 	}
 
+	//allow controller to "subscribe" to scanning events (like the Observer pattern!)
 	public void addScanListener(ActionListener listener){
 		scanButton.addActionListener(listener);
 	}
 
+	//needed this to keep generateUPC private
 	public int performScan(){
 		return generateUPC();
 	}

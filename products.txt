@@ -2,3 +2,7 @@
 67890 Muffin 2.53
 12346 Tea 4.99
 67891 Donut 1.99
+12347 Chai 5.99
+67892 Croissant 0.99
+12348 IcedTea 4.99
+67893 Bagel 0.99

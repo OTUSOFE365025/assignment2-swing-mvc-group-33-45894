@@ -1,6 +1,10 @@
 import java.io.*;
 import java.util.*;
-//
+//CashRegister:
+// Reads product information from the file.
+// Maintains a list of scanned items.
+// Provides methods to add an item by UPC and calculate the running subtotal.
+
 public class Model {
 	 // product list from file (UPC : price)
 	 private Map<String, Double> products = new HashMap<>();
