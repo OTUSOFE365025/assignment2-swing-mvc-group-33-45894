@@ -3,6 +3,9 @@ Example of an MVC design based on Swing. Answer questions 1 & 2 in this README f
 
 <img width="791" height="577" alt="image" src="https://github.com/user-attachments/assets/7da510a6-5c3f-4175-80db-0e822e719d38" />
 
+[Architecture Assignment 2 - Class Diagram_ Lucidchart.pdf](https://github.com/user-attachments/files/22757101/Architecture.Assignment.2.-.Class.Diagram_.Lucidchart.pdf)
+
+
 
 1. The main purpose of the Java Swing Framework is to build Graphical User Interface (GUI) applications. It provides a set of platform-independent components for creating new tabs or windows, buttons, menus, text boxes, tables, and a lot more. This shows that the framework's purpose is to help create interactive desktop applications that can run on any platform.
 
