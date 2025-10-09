@@ -9,4 +9,6 @@ Class Diagram:
 
 
 
+
+Sequence Diagram for Question 4:
 <img width="791" height="577" alt="image" src="https://github.com/user-attachments/assets/7da510a6-5c3f-4175-80db-0e822e719d38" />
