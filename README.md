@@ -16,5 +16,5 @@ Class Diagram:<br />
 
 
 
-Sequence Diagram for Question 4:
+Sequence Diagram for Question 4:<br />
 <img width="760" height="569" alt="image" src="https://github.com/user-attachments/assets/7e9b7278-27ec-4065-afd7-64408a76fe07" />
