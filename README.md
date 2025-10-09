@@ -1,7 +1,7 @@
 
 1. The main purpose of the Java Swing Framework is to build Graphical User Interface (GUI) applications. It provides a set of platform-independent components for creating new tabs or windows, buttons, menus, text boxes, tables, and a lot more. This demonstrates that the framework's primary purpose is to facilitate the creation of interactive desktop applications that can run on any platform.
 
-Class Diagram:
+Class Diagram:<br />
 <img width="904" height="749" alt="image" src="https://github.com/user-attachments/assets/7d68c29d-241b-46bc-82f0-95dd9862a451" />
 [Download PDF](https://github.com/user-attachments/files/22757101/Architecture.Assignment.2.-.Class.Diagram_.Lucidchart.pdf)
 
