@@ -17,4 +17,4 @@ Class Diagram:<br />
 
 
 Sequence Diagram for Question 4:
-<img width="791" height="577" alt="image" src="https://github.com/user-attachments/assets/7da510a6-5c3f-4175-80db-0e822e719d38" />
+<img width="760" height="569" alt="image" src="https://github.com/user-attachments/assets/7e9b7278-27ec-4065-afd7-64408a76fe07" />
