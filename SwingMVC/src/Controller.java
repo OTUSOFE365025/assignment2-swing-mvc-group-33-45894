@@ -1,43 +1,48 @@
 import javax.swing.JOptionPane;
+import java.util.*;
+
+//Controller:
+// Receives scan events from the Scanner.
+// Tells the CashRegister to add the scanned item.
+// Updates the View.
  
 public class Controller {
 	 private Model model;
 	 private View view;
+	 private Scanner scanner;
 	 
 	 public Controller(Model m, View v) {
-	  model = m;
-	  view = v;
-	  initView();
+		  model = m;
+		  view = v;
+		  this.scanner = new Scanner();
 	 }
-	 
-	 public void initView() {
-	  view.getFirstnameTextfield().setText(model.getFirstname());
-	  view.getLastnameTextfield().setText(model.getLastname());
-	 }
-	 
+
 	 public void initController() {
-	  view.getFirstnameSaveButton().addActionListener(e -> saveFirstname());
-	  view.getLastnameSaveButton().addActionListener(e -> saveLastname());
-	  view.getHello().addActionListener(e -> sayHello());
-	  view.getBye().addActionListener(e -> sayBye());
+		 scanner.addScanListener(e -> handleScan());
 	 }
 	 
-	 private void saveFirstname() {
-	  model.setFirstname(view.getFirstnameTextfield().getText());
-	  JOptionPane.showMessageDialog(null, "Firstname saved : " + model.getFirstname(), "Info", JOptionPane.INFORMATION_MESSAGE);
-	 }
-	 
-	 private void saveLastname() {
-	  model.setLastname(view.getLastnameTextfield().getText());
-	  JOptionPane.showMessageDialog(null, "Lastname saved : " + model.getLastname(), "Info", JOptionPane.INFORMATION_MESSAGE);
-	 }
-	 
-	 private void sayHello() {
-	  JOptionPane.showMessageDialog(null, "Hello " + model.getFirstname() + " " + model.getLastname(), "Info", JOptionPane.INFORMATION_MESSAGE);
-	 }
-	 
-	 private void sayBye() {
-	  System.exit(0);
-	 }
+	private void handleScan(){
+		 int upc = scanner.performScan();
+		 if (upc == 0) return;
+
+		 //get product list from Model
+		 Map<String, Double> products = model.getProducts();
+
+		 //search for the scanned UPC
+		 for (String key : products.keySet()){
+			 String[] parts = key.split(",");
+			 int modelUpc = Integer.parseInt(parts[0]);
+
+			 //UPC found, add product and update view
+			 if(modelUpc == upc){
+				 String product = parts[1];
+				 double price = products.get(key);
+				 model.addItem(String.valueOf(upc), product, price);
+				 view.update(model.getScannedItems(), model.getSubtotal());
+				 return;
+			 }
+		 }
+		 System.out.println("UPC not found: "+upc);
+	}
 	 
 }
